@@ -1,0 +1,41 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="restaurantBean" class="org.gontuseries.springcore.Restaurant">
+		<property name="welcomeNote" value="Hello customer, welcome to our restaurant!" />
+		<property name="welcomeTea" value="We will shortyl serve you with tea" />
+		<property name="hotDrink2" ref="teaBeanSetterMethod" />
+		<constructor-arg ref="teaBeanConstructor" />
+		<property name="restaurantWaitersList">
+			<list>
+				<value>Waiter 1</value>
+				<value>Waiter 2</value>
+				<value>Waiter 3</value>
+				<value>Waiter 4</value>
+			</list>
+		</property>
+
+		<property name="waiterNameAndAge">
+			<map>
+				<entry key="Waiter 1" value="30"></entry>
+				<entry key="Waiter 2" value="27"></entry>
+				<entry key="Waiter 3" value="36"></entry>
+				<entry key="Waiter 4" value="34"></entry>
+			</map>
+		</property>
+
+	</bean>
+
+	<bean id="teaBeanConstructor" class="org.gontuseries.springcore.Tea"></bean>
+	<bean id="teaBeanSetterMethod" class="org.gontuseries.springcore.Tea"></bean>
+
+	<bean id="partyBean" class="org.gontuseries.springcore.Party">
+	</bean>
+
+</beans>
+
+
+
+
